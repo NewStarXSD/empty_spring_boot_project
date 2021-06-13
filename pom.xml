@@ -8,6 +8,7 @@
         <module>tdpersonal-service</module>
         <module>tdpersonal-dao</module>
         <module>tdpersonal-web</module>
+        <module>tdpersonal-api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
