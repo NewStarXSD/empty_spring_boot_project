@@ -1,6 +1,6 @@
 package com.star;
 
-import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author: xinsida
  * @create: 2021-06-13 18:04
  **/
+@EnableDubbo
 @SpringBootApplication(scanBasePackages = "com.star")
 public class Application {
     public static void main(String[] args) {

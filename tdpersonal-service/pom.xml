@@ -19,8 +19,13 @@
     <dependencies>
         <dependency>
             <groupId>com.star</groupId>
-            <artifactId>tdpersonal-dao</artifactId>
+            <artifactId>tdpersonal-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
         </dependency>
     </dependencies>
 
