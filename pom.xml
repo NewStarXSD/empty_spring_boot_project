@@ -9,6 +9,7 @@
         <module>tdpersonal-dao</module>
         <module>tdpersonal-web</module>
         <module>tdpersonal-api</module>
+        <module>tdpersonal-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -20,22 +21,49 @@
     <artifactId>tdpersonal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tdpersonal</name>
-    <description>Demo project for Spring Boot</description>
+    <description>personal</description>
+
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot.version>2.5.1</spring-boot.version>
+        <nacos-starter.version>0.2.1</nacos-starter.version>
+        <nacos-client.version>2.0.1</nacos-client.version>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.8.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
