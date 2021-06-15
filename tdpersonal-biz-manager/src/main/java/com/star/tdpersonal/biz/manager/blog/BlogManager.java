@@ -4,6 +4,7 @@ import com.star.tdpersonal.biz.manager.blog.converter.BlogConverter;
 import com.star.tdpersonal.biz.manager.blog.dto.BlogDTO;
 import com.star.tdpersonal.common.dal.blog.entity.BlogDO;
 import com.star.tdpersonal.common.dal.blog.mapper.single.mysql.BlogMapper;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -13,6 +14,7 @@ import javax.annotation.Resource;
  * @author: xinsida
  * @create: 2021-06-15 21:01
  **/
+@Component
 public class BlogManager {
 
     @Resource

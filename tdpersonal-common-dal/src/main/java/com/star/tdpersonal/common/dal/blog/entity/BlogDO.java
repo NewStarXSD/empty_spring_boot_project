@@ -1,7 +1,6 @@
 package com.star.tdpersonal.common.dal.blog.entity;
 
 
-import lombok.Data;
 
 import java.util.Date;
 
@@ -11,7 +10,6 @@ import java.util.Date;
  * @author: xinsida
  * @Date: 2021-06-15 18:13
  **/
-@Data
 public class BlogDO {
 
     /**
@@ -39,4 +37,54 @@ public class BlogDO {
      */
     private String content;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "BlogDO{" +
+                "id=" + id +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }

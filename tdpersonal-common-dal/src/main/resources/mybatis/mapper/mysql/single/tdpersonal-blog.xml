@@ -18,7 +18,7 @@
         <selectKey keyProperty="id" resultType="Long" order="AFTER">
             SELECT LAST_INSERT_ID() AS id
         </selectKey>
-        INSERT INTO tc_transfer_scope
+        INSERT INTO td_personal_blog
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <include refid="Base_Column_List"/>
         </trim>

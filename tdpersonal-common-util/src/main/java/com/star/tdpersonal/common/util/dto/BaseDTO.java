@@ -1,6 +1,5 @@
 package com.star.tdpersonal.common.util.dto;
 
-import lombok.Data;
 
 import java.util.Date;
 
@@ -10,7 +9,6 @@ import java.util.Date;
  * @author: xinsida
  * @create: 2021-06-15 21:16
  **/
-@Data
 public class BaseDTO {
 
     /**
@@ -38,4 +36,54 @@ public class BaseDTO {
      */
     private Long operatorId;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public Long getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(Long operatorId) {
+        this.operatorId = operatorId;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseDTO{" +
+                "id=" + id +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                ", operatorName='" + operatorName + '\'' +
+                ", operatorId=" + operatorId +
+                '}';
+    }
 }
