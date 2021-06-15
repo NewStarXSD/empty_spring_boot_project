@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tdpersonal-web</artifactId>
+    <artifactId>tdpersonal-common-dal</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,16 +18,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.star.tdpersonal</groupId>
-            <artifactId>tdpersonal-common-service-integration</artifactId>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.star.tdpersonal</groupId>
-            <artifactId>tdpersonal-biz-service</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- mybatis的配置文件 -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 自动映射数据库字段至java驼峰 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <mappers>
+        <mapper resource="mybatis/mapper/mysql/single/tdpersonal-blog.xml"/>
+    </mappers>
+</configuration>

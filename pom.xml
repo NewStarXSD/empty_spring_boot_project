@@ -1,40 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>tdpersonal-start</module>
-        <module>tdpersonal-service</module>
-        <module>tdpersonal-dao</module>
-        <module>tdpersonal-web</module>
-        <module>tdpersonal-api</module>
-        <module>tdpersonal-common</module>
-    </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.star</groupId>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.star.tdpersonal</groupId>
     <artifactId>tdpersonal</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>tdpersonal</name>
-    <description>personal</description>
 
     <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <tdpersonal-start.version>0.0.1-SNAPSHOT</tdpersonal-start.version>
+        <tdpersonal-biz-service.version>0.0.1-SNAPSHOT</tdpersonal-biz-service.version>
+        <tdpersonal-biz-manager.version>0.0.1-SNAPSHOT</tdpersonal-biz-manager.version>
+        <tdpersonal-common-dal.version>0.0.1-SNAPSHOT</tdpersonal-common-dal.version>
+        <tdpersonal-common-util.version>0.0.1-SNAPSHOT</tdpersonal-common-util.version>
+        <tdpersonal-web.version>0.0.1-SNAPSHOT</tdpersonal-web.version>
+        <tdpersonal-api.version>0.0.1-SNAPSHOT</tdpersonal-api.version>
+        <tdpersonal-common-service-integration.version>0.0.1-SNAPSHOT</tdpersonal-common-service-integration.version>
         <spring-boot.version>2.5.1</spring-boot.version>
-        <dubbo.version>2.7.6</dubbo.version>
         <nacos-starter.version>0.2.1</nacos-starter.version>
         <nacos-client.version>1.1.4</nacos-client.version>
+        <dubbo.version>2.7.6</dubbo.version>
+        <mybatis-starter.version>2.1.0</mybatis-starter.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <guava.version>22.0</guava.version>
+        <lombok.version>1.18.18</lombok.version>
     </properties>
+
+    <modules>
+        <module>tdpersonal-start</module>
+        <module>tdpersonal-biz-service</module>
+        <module>tdpersonal-common-dal</module>
+        <module>tdpersonal-web</module>
+        <module>tdpersonal-api</module>
+        <module>tdpersonal-common-service-integration</module>
+        <module>tdpersonal-biz-manager</module>
+        <module>tdpersonal-common-util</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- tdpersonal -->
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-start</artifactId>
+                <version>${tdpersonal-start.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-biz-service</artifactId>
+                <version>${tdpersonal-biz-service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-biz-manager</artifactId>
+                <version>${tdpersonal-biz-manager.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-common-dal</artifactId>
+                <version>${tdpersonal-common-dal.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-common-util</artifactId>
+                <version>${tdpersonal-common-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-web</artifactId>
+                <version>${tdpersonal-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-api</artifactId>
+                <version>${tdpersonal-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.star.tdpersonal</groupId>
+                <artifactId>tdpersonal-common-service-integration</artifactId>
+                <version>${tdpersonal-common-service-integration.version}</version>
+            </dependency>
 
             <!-- spring -->
             <dependency>
@@ -73,6 +134,19 @@
                 <version>${dubbo.version}</version>
             </dependency>
 
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-starter.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-to-slf4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
             <!-- commons -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -87,16 +161,22 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

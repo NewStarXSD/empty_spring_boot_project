@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tdpersonal-web</artifactId>
+    <artifactId>tdpersonal-biz-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,15 +19,23 @@
     <dependencies>
         <dependency>
             <groupId>com.star.tdpersonal</groupId>
-            <artifactId>tdpersonal-common-service-integration</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>tdpersonal-api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.star.tdpersonal</groupId>
-            <artifactId>tdpersonal-biz-service</artifactId>
+            <artifactId>tdpersonal-biz-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.star.tdpersonal</groupId>
+            <artifactId>tdpersonal-common-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
