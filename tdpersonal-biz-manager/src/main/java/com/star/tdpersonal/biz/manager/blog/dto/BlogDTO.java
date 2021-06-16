@@ -1,6 +1,8 @@
 package com.star.tdpersonal.biz.manager.blog.dto;
 
 import com.star.tdpersonal.common.util.dto.BaseDTO;
+import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @program: tdpersonal
@@ -8,6 +10,7 @@ import com.star.tdpersonal.common.util.dto.BaseDTO;
  * @author: xinsida
  * @create: 2021-06-15 21:13
  **/
+@Data
 public class BlogDTO extends BaseDTO {
 
     /**
@@ -20,27 +23,12 @@ public class BlogDTO extends BaseDTO {
      */
     private String content;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     @Override
-    public String toString() {
-        return "BlogDTO{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                "} " + super.toString();
+    public boolean validate() {
+        return super.validate()
+                && StringUtils.isNotEmpty(title)
+                && null != getOperatorId()
+                && StringUtils.isNotEmpty(getOperatorName());
     }
+
 }

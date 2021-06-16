@@ -4,6 +4,8 @@ import com.star.tdpersonal.biz.manager.blog.converter.BlogConverter;
 import com.star.tdpersonal.biz.manager.blog.dto.BlogDTO;
 import com.star.tdpersonal.common.dal.blog.entity.BlogDO;
 import com.star.tdpersonal.common.dal.blog.mapper.single.mysql.BlogMapper;
+import com.star.tdpersonal.common.util.common.LoggerNames;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -15,6 +17,7 @@ import javax.annotation.Resource;
  * @create: 2021-06-15 21:01
  **/
 @Component
+@Slf4j(topic = LoggerNames.MANAGER)
 public class BlogManager {
 
     @Resource
@@ -26,8 +29,10 @@ public class BlogManager {
      * @return
      */
     public boolean createBlog(BlogDTO blogDTO){
+        log.info("in@BlogManager createBlog blogDTO = {}", blogDTO);
         BlogDO blogDO = BlogConverter.convertDTO2DO(blogDTO);
         int lines = blogMapper.insert(blogDO);
+        log.info("out@BlogManager createBlog lines = {}", lines);
         if(lines == 0){
             return false;
         }

@@ -23,6 +23,14 @@
             <groupId>com.star.tdpersonal</groupId>
             <artifactId>tdpersonal-common-util</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
     </dependencies>
 
     <properties>

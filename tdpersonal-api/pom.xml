@@ -10,6 +10,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tdpersonal-api</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.star.tdpersonal</groupId>
+            <artifactId>tdpersonal-common-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.star.tdpersonal</groupId>
+            <artifactId>tdpersonal-biz-manager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.star.tdpersonal</groupId>
+            <artifactId>tdpersonal-biz-manager</artifactId>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

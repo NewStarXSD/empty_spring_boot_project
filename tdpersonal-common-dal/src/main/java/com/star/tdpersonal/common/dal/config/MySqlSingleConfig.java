@@ -22,7 +22,7 @@ import javax.sql.DataSource;
  * @program: tdpersonal
  * @Description: mysql单库配置项
  * @author: xinsida
- * @Date: 2021-06-15 15:26
+ * @create: 2021-06-15 15:26
  **/
 @Configuration
 public class MySqlSingleConfig {

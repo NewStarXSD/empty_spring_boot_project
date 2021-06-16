@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @program: tdpersonal
  * @Description: 博客Mapper
  * @author: xinsida
- * @Date: 2021-06-15 18:12
+ * @create: 2021-06-15 18:12
  **/
 @Mapper
 public interface BlogMapper {
