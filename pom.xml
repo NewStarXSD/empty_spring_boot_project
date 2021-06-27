@@ -36,13 +36,17 @@
         <dubbo.version>2.7.6</dubbo.version>
         <mybatis-starter.version>2.1.0</mybatis-starter.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
         <fastjson.version>1.2.47</fastjson.version>
         <guava.version>22.0</guava.version>
         <mysql.version>8.0.25</mysql.version>
         <lombok.version>1.18.20</lombok.version>
         <elastic-search.version>7.8.0</elastic-search.version>
         <elastic-jdbc.version>7.5.0</elastic-jdbc.version>
-        <druid.version>1.1.10</druid.version>
+        <aspectj.version>1.9.2</aspectj.version>
+        <spring-jcl.version>5.3.8</spring-jcl.version>
+        <jcl-over-slf4j.version>1.5.6</jcl-over-slf4j.version>
+        <slf4j-log4j12.version>1.7.9</slf4j-log4j12.version>
     </properties>
 
     <modules>
@@ -119,17 +123,17 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
-                <version>2.5.1</version>
+                <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
-                <version>1.9.2</version>
+                <version>${aspectj.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
-                <version>1.9.2</version>
+                <version>${aspectj.version}</version>
             </dependency>
 
             <!-- nacos -->
@@ -198,17 +202,17 @@
             <dependency>
                 <artifactId>spring-jcl</artifactId>
                 <groupId>org.springframework</groupId>
-                <version>5.3.8</version>
+                <version>${spring-jcl.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
-                <version>1.5.6</version>
+                <version>${jcl-over-slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.9</version>
+                <version>${slf4j-log4j12.version}</version>
             </dependency>
 
             <!-- commons -->
@@ -216,6 +220,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
             </dependency>
 
             <!-- fastjson -->
