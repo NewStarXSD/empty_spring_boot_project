@@ -4,7 +4,7 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
     <property name="APP_NAME" value="td-personal"/>
-    <property name="LOG_PATH" value="/home/tomcat/tdpersonal/logs"/>
+    <property name="LOG_PATH" value="logs"/>
     <property name="LOG_FILE" value="${LOG_PATH}/application.log"/>
     <Property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %logger{40} - %msg%n"/>
     <property name="LOG_MAX_HISTORY" value="15"/>

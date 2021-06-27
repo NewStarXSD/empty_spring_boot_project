@@ -6,12 +6,12 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * @program: tdpersonal
- * @description: 博客传输类
+ * @description: 测试传输类
  * @author: xinsida
  * @create: 2021-06-15 21:13
  **/
 @Data
-public class BlogDTO extends BaseDTO {
+public class TestDTO extends BaseDTO {
 
     /**
      * 标题

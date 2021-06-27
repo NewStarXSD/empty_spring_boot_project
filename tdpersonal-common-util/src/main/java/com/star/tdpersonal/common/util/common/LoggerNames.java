@@ -14,4 +14,5 @@ public interface LoggerNames {
 
     String MANAGER = "MANAGER";
 
+    String COMMON_ERROR = "COMMON_ERROR";
 }

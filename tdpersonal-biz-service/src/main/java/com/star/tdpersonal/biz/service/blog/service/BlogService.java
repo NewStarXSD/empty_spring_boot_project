@@ -1,19 +1,23 @@
 package com.star.tdpersonal.biz.service.blog.service;
 
-import com.star.tdpersonal.biz.manager.blog.dto.BlogDTO;
+import com.star.tdpersonal.common.dal.elastic.blog.condition.BlogESCondition;
+import com.star.tdpersonal.common.dal.elastic.blog.entity.BlogESDO;
+
+import java.util.List;
 
 /**
  * @program: tdpersonal
  * @description: 博客业务逻辑服务层
  * @author: xinsida
- * @create: 2021-06-15 23:08
+ * @create: 2021-06-27 16:16
  **/
 public interface BlogService {
 
     /**
-     * 新建博客
-     * @param blogDTO
+     * 查询博客列表
+     *
+     * @param blogESCondition
+     * @return
      */
-    Boolean createBlog(BlogDTO blogDTO);
-
+    List<BlogESDO> queryBlogList(BlogESCondition blogESCondition);
 }

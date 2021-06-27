@@ -1,6 +1,6 @@
 package com.star.tdpersonal.api;
 
-import com.star.tdpersonal.biz.manager.blog.dto.BlogDTO;
+import com.star.tdpersonal.biz.manager.blog.dto.TestDTO;
 import com.star.tdpersonal.common.util.dto.ResultDTO;
 
 /**
@@ -9,13 +9,13 @@ import com.star.tdpersonal.common.util.dto.ResultDTO;
  * @author: xinsida
  * @create: 2021-06-16 10:58
  **/
-public interface IBlogManageHsfService {
+public interface ITestManageHsfService {
 
     /**
      * 创建博客
-     * @param blogDTO
+     * @param testDTO
      * @return
      */
-    ResultDTO<Boolean> createBlog(BlogDTO blogDTO);
+    ResultDTO<Boolean> createTest(TestDTO testDTO);
 
 }

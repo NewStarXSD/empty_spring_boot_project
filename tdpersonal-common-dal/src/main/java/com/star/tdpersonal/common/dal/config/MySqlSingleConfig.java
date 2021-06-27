@@ -3,7 +3,7 @@ package com.star.tdpersonal.common.dal.config;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.mapper.MapperScannerConfigurer;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -25,10 +25,11 @@ import javax.sql.DataSource;
  * @create: 2021-06-15 15:26
  **/
 @Configuration
+@MapperScan(basePackages = {"com.star.tdpersonal.common.dal.mysql.*.mapper.single"}, sqlSessionFactoryRef = "mysqlSingleSqlSessionFactory")
 public class MySqlSingleConfig {
 
     @Bean(name = "mysqlSingleDataSource")
-    @ConfigurationProperties(prefix = "mysql")
+    @ConfigurationProperties(prefix = "spring.datasource.mysql")
     public DataSource mysqlSingleDataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -48,7 +49,7 @@ public class MySqlSingleConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(mySqlSingleDataSource);
         sqlSessionFactoryBean.setConfigLocation(configLocation);
-        sqlSessionFactoryBean.setTypeAliasesPackage("com.star.tdpersonal.common.dal.*.entity");
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.star.tdpersonal.common.dal.mysql.*.entity");
         return sqlSessionFactoryBean.getObject();
     }
 
@@ -81,22 +82,9 @@ public class MySqlSingleConfig {
      * @param mysqlSingleTransactionManager
      * @return
      */
-    @Bean(name = "mysqlSingleTansactionTemplate")
-    public TransactionTemplate mysqlSingleTansactionTemplate(@Qualifier("mysqlSingleTransactionManager") PlatformTransactionManager mysqlSingleTransactionManager) {
+    @Bean(name = "mysqlSingleTransactionTemplate")
+    public TransactionTemplate mysqlSingleTransactionTemplate(@Qualifier("mysqlSingleTransactionManager") PlatformTransactionManager mysqlSingleTransactionManager) {
         return new TransactionTemplate(mysqlSingleTransactionManager);
-    }
-
-    /**
-     * Mapper扫描路径
-     *
-     * @return
-     */
-    @Bean(name = "mysqlSingleMapperScannerConfigurer")
-    public MapperScannerConfigurer mysqlSingleMapperScannerConfigurer() {
-        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setSqlSessionFactoryBeanName("mysqlSingleSqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage("com.star.tdpersonal.common.dal.*.mapper.single.mysql");
-        return mapperScannerConfigurer;
     }
 
 }

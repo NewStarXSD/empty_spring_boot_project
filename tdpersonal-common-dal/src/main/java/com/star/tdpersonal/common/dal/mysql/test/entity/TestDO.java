@@ -1,4 +1,4 @@
-package com.star.tdpersonal.common.dal.blog.entity;
+package com.star.tdpersonal.common.dal.mysql.test.entity;
 
 
 import lombok.Data;
@@ -7,12 +7,12 @@ import java.util.Date;
 
 /**
  * @program: tdpersonal
- * @Description:博客数据库存储实体类
+ * @Description:测试数据库存储实体类
  * @author: xinsida
  * @create: 2021-06-15 18:13
  **/
 @Data
-public class BlogDO {
+public class TestDO {
 
     /**
      * 主键
@@ -38,5 +38,15 @@ public class BlogDO {
      * 内容
      */
     private String content;
+
+    /**
+     * 作者信息
+     */
+    private String author;
+
+    /**
+     * 类型
+     */
+    private String type;
 
 }
